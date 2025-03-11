@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.timulys.board_back.entity.ImageEntity;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,4 +13,7 @@ import java.util.List;
 public interface ImageRepository extends JpaRepository<ImageEntity, Integer> {
 
     List<ImageEntity> findByBoardNumber(Integer boardNumber);
+
+    @Transactional
+    void deleteByBoardNumber(Integer boardNumber);
 }

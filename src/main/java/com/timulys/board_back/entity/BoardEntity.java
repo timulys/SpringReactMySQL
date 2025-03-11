@@ -1,5 +1,6 @@
 package com.timulys.board_back.entity;
 
+import com.timulys.board_back.dto.request.board.PatchBoardRequestDto;
 import com.timulys.board_back.dto.request.board.PostBoardRequestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -54,5 +55,10 @@ public class BoardEntity {
 
     public void increaseCommentCount() {
         this.commentCount++;
+    }
+
+    public void patchBoard(PatchBoardRequestDto dto) {
+        this.title = dto.getTitle();
+        this.content = dto.getContent();
     }
 }

@@ -1,4 +1,4 @@
-package com.timulys.board_back.dto.response.board;
+package com.timulys.board_back.dto.response.user;
 
 import com.timulys.board_back.common.ResponseCode;
 import com.timulys.board_back.common.ResponseMessage;
@@ -8,29 +8,31 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 /**
- * packageName :   com.timulys.board_back.dto.response.board
- * fileName    :   PostBoardResponseDto
+ * packageName :   com.timulys.board_back.dto.response.user
+ * fileName    :   PatchProfileImageResponseDto
  * author      :   user
- * date        :   2024-10-06
+ * date        :   2025-02-21
  * description :
  * -----------------------------------------------------------
  * DATE                    AUTHOR              NOTE
  * -----------------------------------------------------------
- * 2024-10-06             user                 최초 생성
+ * 2025-02-21             user                 최초 생성
  */
 @Getter
-public class PostBoardResponseDto extends ResponseDto {
-    private PostBoardResponseDto() {
+public class PatchProfileImageResponseDto extends ResponseDto {
+    private PatchProfileImageResponseDto() {
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
     }
 
-    public static ResponseEntity<PostBoardResponseDto> success() {
-        PostBoardResponseDto result = new PostBoardResponseDto();
+    public static ResponseEntity<PatchProfileImageResponseDto> success() {
+        PatchProfileImageResponseDto result = new PatchProfileImageResponseDto();
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     public static ResponseEntity<ResponseDto> noExistUser() {
         ResponseDto result = new ResponseDto(ResponseCode.NOT_EXISTED_USER, ResponseMessage.NOT_EXISTED_USER);
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(result);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
     }
+
+
 }

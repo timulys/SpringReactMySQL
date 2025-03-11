@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity(name = "board_list_view")
 @Table(name = "board_list_view")
 public class BoardListViewEntity {
+    // View 생성 쿼리는 강의 6강 16분 49초
     @Id
     private int boardNumber;
     private String title;
