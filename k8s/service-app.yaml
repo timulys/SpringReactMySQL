@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: springboot-app
 spec:
+  type: NodePort
   selector:
     app: springboot-app
   ports:
