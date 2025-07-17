@@ -30,6 +30,8 @@ jobs:
           sed -i 's|image: timulys/springboot-app:.*|image: timulys/springboot-app:${{ github.sha }}|' k8s/deployment-app.yaml
 
       - name: Commit and Push updated manifest
+        env:
+          TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
