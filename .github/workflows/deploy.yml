@@ -23,4 +23,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: timulys/springboot-app:latest
+          tags: timulys/springboot-app:latest # 이미지명 변경
