@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: timulys/springboot-app:latest
+          image: timulys/springboot-app:${{ github.sha }}
           ports:
             - containerPort: 4000
           env:
